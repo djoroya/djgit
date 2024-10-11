@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: djgit
+Version: 0.1.0
+Home-page: https://github.com/djoroya/djgit
+Author: Deyviss Jesus Oroya Villalta
+Author-email: djoroya@gmail.com
+Project-URL: Source Code, https://github.com/djoroya/djgit
+Project-URL: Bug Tracker, https://github.com/djoroya/djgit/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

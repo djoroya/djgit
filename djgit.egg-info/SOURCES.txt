@@ -1,0 +1,9 @@
+README.md
+setup.py
+djgit/__init__.py
+djgit/deploy.py
+djgit/tools.py
+djgit.egg-info/PKG-INFO
+djgit.egg-info/SOURCES.txt
+djgit.egg-info/dependency_links.txt
+djgit.egg-info/top_level.txt
