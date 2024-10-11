@@ -1,6 +1,6 @@
 import os
 import shutil
-from tools import get_repo_name, list_remote_branches, create_deploy_branch, clonar_deploy_branch,createsetup
+from .tools import get_repo_name, list_remote_branches, create_deploy_branch, clonar_deploy_branch,createsetup
 
 # ============== Main ===================
 def deploy(target_folder):
