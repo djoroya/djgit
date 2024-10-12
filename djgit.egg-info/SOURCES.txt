@@ -2,6 +2,7 @@ README.md
 setup.py
 djgit/__init__.py
 djgit/deploy.py
+djgit/npm_deploy.py
 djgit/tools.py
 djgit.egg-info/PKG-INFO
 djgit.egg-info/SOURCES.txt
