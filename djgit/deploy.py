@@ -3,7 +3,7 @@ import shutil
 from .tools import get_repo_name, list_remote_branches, create_deploy_branch, clonar_deploy_branch,createsetup
 
 # ============== Main ===================
-def deploy(target_folder):
+def deploy(target_folder,package_data={}):
 
     folder_exists = os.path.exists('.repo_deploy')
     if not folder_exists:
@@ -48,7 +48,7 @@ def deploy(target_folder):
     shutil.copytree(target_folder, folder_name)
 
     os.chdir('.repo_deploy')
-    createsetup(name)
+    createsetup(name,package_data=package_data)
 
     os.system('python setup.py sdist')
     os.system('python setup.py bdist_wheel')
