@@ -1,4 +1,4 @@
-import shutil,os
+import json,os
 
 def list_remote_branches(repo_url):
     # Ejecutar el comando 'git ls-remote --heads' para listar las ramas remotas
@@ -42,7 +42,7 @@ def get_repo_name():
 
 import os,shutil
 
-def createsetup(repo_name):
+def createsetup(repo_name,package_data={}):
 
     setup_lines = """  
 from setuptools import setup, find_packages
@@ -70,15 +70,20 @@ setup(
         "Operating System :: OS Independent",
     ],
     include_package_data=True,
-    package_data={
-    },
+    package_data=PACKAGE_DATA_HERE,
 )
   """
 
     setup_lines = setup_lines.replace("REPO_NAME", repo_name)
 
+
+    setup_lines = setup_lines.replace("PACKAGE_DATA_HERE", json.dumps(package_data))
+
     # 
     # write setup.py
+    # p = {
+    #     "djccx": ["djccx/bin/*", "djccx/data/*.lmp", "djccx/data/*.table"],
+    #     }
 
     with open( "setup.py", "w") as f:
         f.write(setup_lines)
