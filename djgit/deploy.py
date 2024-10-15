@@ -50,5 +50,14 @@ def deploy(target_folder,package_data={}):
     os.chdir('.repo_deploy')
     createsetup(name,package_data=package_data)
 
+
+    # if exists build, dist and .egg-info remove
+    if os.path.exists('build'):
+        shutil.rmtree('build')
+    if os.path.exists('dist'):
+        shutil.rmtree('dist')
+    if os.path.exists(name+".egg-info"):
+        shutil.rmtree(name+".egg-info")
+
     os.system('python setup.py sdist')
     os.system('python setup.py bdist_wheel')
