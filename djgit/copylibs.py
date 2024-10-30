@@ -96,3 +96,11 @@ def main():
 
     #  mv requirements_temp_no_git.txt requirements.txt
     shutil.move(f".copylibs/{now_str}/requirements_temp_no_git.txt", f".copylibs/{now_str}/requirements.txt")
+
+    # remove requirements_temp.txt
+    os.remove("requirements_temp.txt")
+    # remove requirements_temp_no_git.txt
+    os.remove("requirements_temp_no_git.txt")
+
+    # remove dependencies
+    shutil.rmtree("dependencies")
