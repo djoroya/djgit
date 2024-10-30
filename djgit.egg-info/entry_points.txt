@@ -1,0 +1,2 @@
+[console_scripts]
+djgit_copylibs = djgit.copylibs:main

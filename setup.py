@@ -10,6 +10,11 @@ setup(
     author_email="djoroya@gmail.com",
     url="https://github.com/djoroya/djgit",
     packages=find_packages(),  # Encuentra  los paquetes en la carpeta src
+    entry_points={
+        "console_scripts": [
+            " djgit_copylibs=djgit.copylibs:main"
+        ]
+    },
     project_urls={
         "Source Code": "https://github.com/djoroya/djgit",
         "Bug Tracker": "https://github.com/djoroya/djgit/issues",
