@@ -1,9 +1,9 @@
-import sys,os
+import sys,os,glob
 import argparse
 def addpath():
 
     parser = argparse.ArgumentParser(description='Add paths to the python path')
-    parser.add_argument('--path', type=str, help='Path to add to the python path', default=path)
+    parser.add_argument('--path', type=str, help='Path to add to the python path')
     args = parser.parse_args()
 
     path = args.path
@@ -19,16 +19,33 @@ def addpath():
     # select the elements of path list who  contains the word 'site-packages'
     site = [x for x in sys.path if 'site-packages' in x]
 
-    # take current working directory
-    cwd = sys.path[0] 
-    # add src
-
-    cmd =  os.path.join(cwd, path) 
+    cmd =  os.path.abspath(path)
 
     print("Adding the following paths to the python path:")
     print(cmd)
+
+    # pth file 
+    # search for the pth file in the site-packages directory
+    pth_file = glob.glob(os.path.join(site[0], '*.pth'))
+    if len(pth_file) == 0:
+        print("No pth file found in the site-packages directory")
+        pth_file = os.path.join(site[0], 'conda.pth')
+    else:
+        pth_file = pth_file[0]
+
+    # check if the path is already in the pth file
+    with open(pth_file, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            if cmd in line:
+                print(f"Path {cmd} already in the pth file")
+                return
+            
+    print("Path to the pth file:")
+    print(pth_file)
+
     # create a new file named conda.pth in the site-packages directory
-    with open(os.path.join(site[0], 'conda.pth'), 'a') as f:
+    with open(pth_file, 'a') as f:
         f.write(cmd)
         f.write('\n')
 
