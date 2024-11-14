@@ -1,2 +1,3 @@
 [console_scripts]
+djgit_addpath = djgit.addpath:addpath
 djgit_copylibs = djgit.copylibs:main

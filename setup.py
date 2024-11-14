@@ -12,7 +12,8 @@ setup(
     packages=find_packages(),  # Encuentra  los paquetes en la carpeta src
     entry_points={
         "console_scripts": [
-            " djgit_copylibs=djgit.copylibs:main"
+            "djgit_copylibs=djgit.copylibs:main",
+            "djgit_addpath=djgit.addpath:addpath",
         ]
     },
     project_urls={

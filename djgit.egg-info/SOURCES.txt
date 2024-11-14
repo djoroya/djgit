@@ -1,6 +1,7 @@
 README.md
 setup.py
 djgit/__init__.py
+djgit/addpath.py
 djgit/copylibs.py
 djgit/deploy.py
 djgit/npm_deploy.py
