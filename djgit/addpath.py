@@ -37,7 +37,7 @@ def addpath():
     with open(pth_file, 'r') as f:
         lines = f.readlines()
         for line in lines:
-            if cmd in line:
+            if cmd == line:
                 print(f"Path {cmd} already in the pth file")
                 return
             
