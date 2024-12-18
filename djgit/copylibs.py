@@ -43,7 +43,6 @@ def main():
 
     # remove is exists
     if os.path.exists(dev_folder):
-        import shutil
         shutil.rmtree(dev_folder)
         
     print(f"creating {dev_folder}")
@@ -81,7 +80,13 @@ def main():
     # list dirs 
     dirs = os.listdir(".")
     # remove .conda .vscode .git .repo_deploy .copylibs
-    dirs = [d for d in dirs if d not in [".conda", ".vscode", ".git", ".repo_deploy", ".copylibs","requirements_temp.txt","simulations"]]
+    dirs = [d for d in dirs if d not in [".conda", 
+                                         ".vscode", ".git", 
+                                         ".repo_deploy", 
+                                         ".copylibs",
+                                         "node_modules",
+                                         "requirements_temp.txt",
+                                         "simulations"]]
 
     print(dirs)
     # copy others 

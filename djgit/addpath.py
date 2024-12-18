@@ -1,13 +1,7 @@
 import sys,os,glob
 import argparse
-def addpath():
 
-    parser = argparse.ArgumentParser(description='Add paths to the python path')
-    parser.add_argument('--path', type=str, help='Path to add to the python path')
-    args = parser.parse_args()
-
-    path = args.path
-
+def addpath_python(path):
     print("Adding the following paths to the python path:")
     print(path)
 
@@ -49,3 +43,14 @@ def addpath():
         f.write(cmd)
         f.write('\n')
 
+
+def addpath():
+
+    parser = argparse.ArgumentParser(description='Add paths to the python path')
+    parser.add_argument('--path', type=str, help='Path to add to the python path')
+    args = parser.parse_args()
+
+    path = args.path
+
+    addpath_python(path)
+    
