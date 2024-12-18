@@ -104,3 +104,5 @@ def main():
 
     # remove dependencies
     shutil.rmtree("dependencies")
+
+    return f".copylibs/{now_str}"
