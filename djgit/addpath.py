@@ -22,9 +22,10 @@ def addpath_python(path):
 
     # es mejor crear un archivo pth nuevo 
     pth_file = os.path.join(site[0], 'conda.pth')
+    # create file 
 
     # check if the path is already in the pth file
-    with open(pth_file, 'r') as f:
+    with open(pth_file, 'w') as f:
         lines = f.readlines()
         for line in lines:
             if cmd == line:
