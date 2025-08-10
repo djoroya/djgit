@@ -17,7 +17,7 @@ if [ -d ".conda" ]; then
 else
     # Crear el entorno de conda en el directorio actual si no existe
     echo "Creando el entorno Conda..."
-    conda create -p ./../.conda python=$1 
+    conda create -p ./../.conda python=3.9
 fi
 
 conda activate .conda
@@ -28,5 +28,5 @@ pip install -r requirements.txt
 
 pip install git+https://github.com/djoroya/djgit.git
 
-
+mkdir -p src
 djgit_addpath --path src

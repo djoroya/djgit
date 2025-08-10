@@ -47,6 +47,17 @@ def main():
     if not os.path.exists("README.md"):
         with open("README.md", "w") as f:
             f.write("# Project Title\n\nDescription of the project.\n")
-    os.system(f"sh {create_env_sh} {python}") 
+    
+    # Create settings folder 
+    if not os.path.exists("settings"):
+        os.makedirs("settings")
 
+        # copy create_env.sh and add_path_env.sh to settings with name INSTALL.sh
+
+        os.system(f"cp {create_env_sh} settings/INSTALL.sh")
+
+        print(" Run the following command to install the virtual environment:")
+        print(50 * "-")
+        print(f"   sh settings/INSTALL.sh")
+        print(50 * "-")
     # mkdir src 
