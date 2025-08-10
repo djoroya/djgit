@@ -2,6 +2,43 @@ import importlib
 import os, shutil
 
 def main():
+    """
+Creates a timestamped snapshot of the current project by freezing dependencies, separating VCS-based packages from standard ones, vendoring importable VCS modules for pruning, and copying the working tree into <code>.copylibs/<timestamp></code>. Temporary files are cleaned up, and a consolidated <code>requirements.txt</code> is written inside the snapshot.
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Inputs</strong></td>
+      <td>
+        None
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Outputs</strong></td>
+      <td>
+        <em>str</em>: Path to the created snapshot directory (e.g., <code>.copylibs/2025-08-10-12-34-56</code>). Side effects include writing a cleaned <code>requirements.txt</code> inside the snapshot, creating/removing temporary files (<code>requirements_temp*.txt</code>), and creating/removing the <code>dependencies</code> folder.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Runs <code>pip freeze</code> via <code>os.system</code>; requires <code>pip</code> available on <code>PATH</code>.</li>
+  <li>Overwrites temporary files and deletes the <code>dependencies</code> directory if it exists.</li>
+  <li>Import errors for VCS modules are caught and printed; those modules are skipped.</li>
+  <li>Prunes <code>lammps</code> (for modules containing <code>djlmp</code>) and <code>simulations</code> (for modules containing <code>runstep</code>) after vendoring.</li>
+  <li>File operations may raise <code>OSError</code> or <code>shutil.Error</code> depending on permissions and filesystem state.</li>
+</ul>
+<p>Example usage:</p>
+```bash
+djgit_copylibs  
+```
+"""
 
     os.system("pip freeze > requirements_temp.txt")
     def read_requirements():

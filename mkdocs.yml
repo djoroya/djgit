@@ -1,0 +1,32 @@
+site_name: djgit
+site_description: djgit
+site_url: https://djoroya.github.io/djgit/
+repo_url: https://github.com/djoroya/djgit
+theme:
+  name: readthedocs
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+    - scheme: slate
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+nav:
+  - Inicio: index.md
+  - Referencia:
+      - API:
+          - '  Init  ': __init__.md
+          - Addpath: addpath.md
+          - Copylibs: copylibs.md
+          - Deploy: deploy.md
+          - Npm Deploy: npm_deploy.md
+          - Py2Md Docs: py2md_docs.md
+          - Tools: tools.md
