@@ -32,8 +32,5 @@ mkdir -p src
 djgit_addpath --path src
 
 # create .gitignore file
-files = [".conda","*.pyc","__pycache__","*.pyo","*.pyd","*.egg-info","*.eggs","*.whl","*.zip","*.tar.gz","*.tar.bz2",".DS_Store",".idea",".vscode"]
-echo "Creando el archivo .gitignore..."
-for file in "${files[@]}"; do
-    echo "$file" >> .gitignore
-done
+echo ".conda/" > .gitignore
+echo "*.pyc" >> .gitignore
