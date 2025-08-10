@@ -28,3 +28,5 @@ pip install -r requirements.txt
 
 pip install git+https://github.com/djoroya/djgit.git
 
+
+djgit_addpath --path src
