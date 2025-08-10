@@ -3,8 +3,10 @@ setup.py
 djgit/__init__.py
 djgit/addpath.py
 djgit/copylibs.py
+djgit/create_env.py
 djgit/deploy.py
 djgit/npm_deploy.py
+djgit/py2md_docs.py
 djgit/tools.py
 djgit.egg-info/PKG-INFO
 djgit.egg-info/SOURCES.txt

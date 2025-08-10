@@ -14,7 +14,8 @@ setup(
         "console_scripts": [
             "djgit_copylibs=djgit.copylibs:main",
             "djgit_addpath=djgit.addpath:addpath",
-            "djgit_docs=djgit.py2md_docs:main"
+            "djgit_docs=djgit.py2md_docs:main",
+            "djgit_create_env=djgit.create_env:main",
         ]
     },
     project_urls={
