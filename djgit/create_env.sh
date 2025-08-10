@@ -17,10 +17,10 @@ if [ -d ".conda" ]; then
 else
     # Crear el entorno de conda en el directorio actual si no existe
     echo "Creando el entorno Conda..."
-    conda create -p ./../.conda python=3.9
+    conda create -p .conda/ python=3.9
 fi
 
-conda activate .conda
+conda activate .conda/
 conda install pip
 
 
