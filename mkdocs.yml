@@ -2,6 +2,8 @@ site_name: djgit
 site_description: djgit
 site_url: https://djoroya.github.io/djgit/
 repo_url: https://github.com/djoroya/djgit
+docs_dir: site
+site_dir: docs
 theme:
   name: readthedocs
   features:
