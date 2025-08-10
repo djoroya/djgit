@@ -1,9 +1,11 @@
 README.md
 setup.py
 djgit/__init__.py
+djgit/add_path_env.sh
 djgit/addpath.py
 djgit/copylibs.py
 djgit/create_env.py
+djgit/create_env.sh
 djgit/deploy.py
 djgit/npm_deploy.py
 djgit/py2md_docs.py

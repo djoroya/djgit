@@ -32,6 +32,6 @@ setup(
     ],
     include_package_data=True,
     package_data={
-        "djgit": ["djgit/*.sh"],  # Incluir archivos de datos específicos
+        "djgit": ["*.sh"],  # Incluir archivos de datos específicos
     },
 )
