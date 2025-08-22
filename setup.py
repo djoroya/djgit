@@ -17,6 +17,7 @@ setup(
             "djgit_docs=djgit.py2md_docs:main",
             "djgit_create_env=djgit.create_env:main",
             "djgit_set_ps=djgit.set_ps:main",
+            "djgit_wine_setup=djgit.wine_setup:main",
         ]
     },
     project_urls={

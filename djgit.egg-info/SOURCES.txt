@@ -12,6 +12,7 @@ djgit/npm_deploy.py
 djgit/py2md_docs.py
 djgit/set_ps.py
 djgit/tools.py
+djgit/wine_setup.py
 djgit.egg-info/PKG-INFO
 djgit.egg-info/SOURCES.txt
 djgit.egg-info/dependency_links.txt
