@@ -7,8 +7,10 @@ djgit/copylibs.py
 djgit/create_env.py
 djgit/create_env.sh
 djgit/deploy.py
+djgit/gitignore.sh
 djgit/npm_deploy.py
 djgit/py2md_docs.py
+djgit/set_ps.py
 djgit/tools.py
 djgit.egg-info/PKG-INFO
 djgit.egg-info/SOURCES.txt

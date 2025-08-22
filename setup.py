@@ -16,6 +16,7 @@ setup(
             "djgit_addpath=djgit.addpath:addpath",
             "djgit_docs=djgit.py2md_docs:main",
             "djgit_create_env=djgit.create_env:main",
+            "djgit_set_ps=djgit.set_ps:main",
         ]
     },
     project_urls={
