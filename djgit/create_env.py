@@ -54,7 +54,6 @@ def main():
         with open("README.md", "w") as f:
             f.write("# Project Title\n\nDescription of the project.\n")
 
-    os.system(f"cp {generate_docs_py} settings/")
 
     # Create settings folder 
     if not os.path.exists("settings"):
@@ -69,6 +68,7 @@ def main():
         print(f"   sh settings/INSTALL.sh")
         print(50 * "-")
     # mkdir src 
+    os.system(f"cp {generate_docs_py} settings/")
 
 
     # Carpeta docs
