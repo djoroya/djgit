@@ -5,7 +5,7 @@ path_folder = __file__.rsplit("/", 1)[0]
 
 create_env_sh = os.path.join(path_folder, "create_env.sh")
 add_path_sh = os.path.join(path_folder, "add_path_env.sh")
-
+generate_docs_py = os.path.join(path_folder, "generate_docs.py")
 print(f"Path folder: {create_env_sh}")
 
 LICENSE = """
@@ -37,17 +37,25 @@ def main():
 
     python = args.python
 
+    requirements_default = ["jupyter", 
+                            "ipykernel", 
+                            "nbconvert", 
+                            "djgit @ git+https://github.com/djoroya/djgit.git"]
     os.system("mkdir -p src")
     # create requirements.txt if not exists
     if not os.path.exists("requirements.txt"):
         with open("requirements.txt", "w") as f:
             f.write("# Add your project dependencies here\n")
+            for req in requirements_default:
+                f.write(req + "\n")
     os.system("mkdir -p scripts")
     # README.md
     if not os.path.exists("README.md"):
         with open("README.md", "w") as f:
             f.write("# Project Title\n\nDescription of the project.\n")
-    
+
+    os.system(f"cp {generate_docs_py} settings/")
+
     # Create settings folder 
     if not os.path.exists("settings"):
         os.makedirs("settings")
@@ -61,3 +69,21 @@ def main():
         print(f"   sh settings/INSTALL.sh")
         print(50 * "-")
     # mkdir src 
+
+
+    # Carpeta docs
+    if not os.path.exists("docs"):
+        os.makedirs("docs")
+        with open("docs/index.md", "w") as f:
+            f.write("# Bienvenido a la documentación\n\nEsta documentación se genera automáticamente desde los notebooks y scripts.\n")
+
+    # mkdocs.yml
+    if not os.path.exists("mkdocs.yml"):
+        with open("mkdocs.yml", "w") as f:
+            f.write(
+                "site_name: Proyecto\n"
+                "docs_dir: docs\n"
+                "nav:\n"
+                "  - Inicio: index.md\n"
+                "  - Estudios: auto_docs.md\n"
+            )

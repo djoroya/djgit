@@ -7,6 +7,7 @@ djgit/copylibs.py
 djgit/create_env.py
 djgit/create_env.sh
 djgit/deploy.py
+djgit/generate_docs.py
 djgit/gitignore.sh
 djgit/npm_deploy.py
 djgit/py2md_docs.py
