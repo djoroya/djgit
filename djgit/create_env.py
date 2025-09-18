@@ -40,6 +40,8 @@ def main():
     requirements_default = ["jupyter", 
                             "ipykernel", 
                             "nbconvert", 
+                            "mkdocs",
+                            "mkdocs-material"
                             "djgit @ git+https://github.com/djoroya/djgit.git"]
     os.system("mkdir -p src")
     # create requirements.txt if not exists
